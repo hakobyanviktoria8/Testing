@@ -47,38 +47,83 @@
 //     expect(new Set(shoppingList)).toContain('milk');
 //   });
 
-// promise
+// // promise
+// const fetchData = () => {
+//     return new Promise(resolve => {
+//         resolve('peanut butter')
+//     })
+// }
+// // console.log(fetchData());
+// test('the data is peanut butter', () => {
+//     return fetchData().then(data => {
+//         expect(data).toBe('peanut butter');
+//     });
+// });
 
-const fetchData = () => {
-    return new Promise(resolve => {
-        resolve('peanut butter')
-    })
-}
-// console.log(fetchData());
-test('the data is peanut butter', () => {
-    return fetchData().then(data => {
-        expect(data).toBe('peanut butter');
-    });
-});
+// test('the fetch fails with an error', async () => {
+//     // expect.assertions(1);
+//     try {
+//       await fetchData();
+//     } catch (e) {
+//       expect(e).toMatch('error');
+//     }
+//   });
 
-test('the fetch fails with an error', async () => {
-    // expect.assertions(1);
-    try {
-      await fetchData();
-    } catch (e) {
-      expect(e).toMatch('error');
-    }
-  });
-
-  test('the data is peanut butter', async () => {
-    await expect(fetchData()).resolves.toBe('peanut butter');
-  });
+//   test('the data is peanut butter', async () => {
+//     await expect(fetchData()).resolves.toBe('peanut butter');
+//   });
   
-//   didn't WORK
-//   test('the fetch fails with an error', async () => {
-//     await expect(fetchData()).rejects.toMatch('error');
+// //   didn't WORK
+// //   test('the fetch fails with an error', async () => {
+// //     await expect(fetchData()).rejects.toMatch('error');
+// //   });
+// // test('the fetch fails with an error', () => {
+// //     expect.assertions(1);
+// //     return fetchData().catch(e => expect(e).toMatch('error'));
+// //   });
+
+// test('', () => console.log('1 - test'));
+
+// describe('Scoped / Nested block', () => {
+//   beforeAll(() => console.log('2 - beforeAll'));
+//   afterAll(() => console.log('2 - afterAll'));
+//   beforeEach(() => console.log('2 - beforeEach'));
+//   afterEach(() => console.log('2 - afterEach'));
+
+//   test('', () => console.log('2 - test'));
+// });
+
+// describe('describe outer', () => {
+//     console.log('describe outer-a');
+  
+//     describe('describe inner 1', () => {
+//       console.log('describe inner 1');
+  
+//       test('test 1', () => console.log('test 1'));
+//     });
+  
+//     console.log('describe outer-b');
+  
+//     test('test 2', () => console.log('test 2'));
+  
+//     describe('describe inner 2', () => {
+//       console.log('describe inner 2');
+  
+//       test('test 3', () => console.log('test 3'));
+//     });
+  
+//     console.log('describe outer-c');
 //   });
-// test('the fetch fails with an error', () => {
-//     expect.assertions(1);
-//     return fetchData().catch(e => expect(e).toMatch('error'));
-//   });
+  
+//   // describe outer-a
+//   // describe inner 1
+//   // describe outer-b
+//   // describe inner 2
+//   // describe outer-c
+//   // test 1
+//   // test 2
+//   // test 3
+
+  test.only('this will be the only test that runs', () => {
+    expect(true).not.toBe(false);
+  });
